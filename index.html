@@ -14,6 +14,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: plus Jakarta Sans, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
         .navbar-1 a {
             color: black;
             text-decoration: none;
@@ -36,6 +46,7 @@
         h2 {
             color: #48ad92;
             font-weight: bold;
+            font-size: 40px;
         }
 
         #banner img {
@@ -50,13 +61,41 @@
             }
         }
 
-        .quick-section img {
+        .quick-section .carousel img {
             height: 150px;
             width: 150px;
             padding: 20px;
 
         }
 
+
+        .quick-btns {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .quick-btns button {
+            width: 12px;
+            height: 12px;
+            background-color: #9ddbc9;
+            /* Mint color for inactive */
+            border-radius: 50%;
+            border: none;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .quick-btns button.active {
+            background-color: #1a7456;
+            /* Dark green for active */
+        }
+
+        #floating-btn {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 1000;
+        }
 
         .top-seller .card {
             height: 400px;
@@ -67,30 +106,38 @@
         .carousel-control-next {
             top: 50%;
             transform: translateY(-50%);
-        }
-
-        .top-seller button {
-            background-color: #666666;
+            background: transparent;
             color: white;
             height: 50px;
             width: 50px;
             border-radius: 50%;
         }
 
-
-        .Footer a {
-            color: white;
-            text-decoration: none;
+        .payment-option h3 {
+            font-size: 18px;
+            color: #222;
         }
 
-        .Footer i {
-            width: 50px;
+        .payment-option .pay {
+            display: flex;
+            gap: 20px;
+        }
+
+        footer {
+            padding: 40px 0 20px;
+            color: #FFFFFFBF;
+        }
+
+
+        .Footer a {
+            color: #FFFFFFBF;
+            padding: 10px 0;
         }
 
         .Footer li {
             list-style-type: none;
-            padding: 15px;
-            font-weight: bold;
+            line-height: 2.5rem;
+            margin: 0 15px 10px 0;
         }
     </style>
 
@@ -98,8 +145,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-1" style="background-color: #666666; opacity: 50%;">
-        <div class="container-fluid">
+    <nav class="navbar navbar-1" style="background-color:  #f2f8f9;">
+        <div class="container-fluid px-3 py-2">
             <div id="demo" class="carousel slide d-block d-md-none" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -147,15 +194,15 @@
                     <img src="./images/logo.svg" alt="MyVitaminStore" style="height: 40px;">
                 </a>
             </div>
-            <form class="d-flex flex-grow-1 mx-3" style="max-width: 600px;">
-                <input class="form-control border-success border-2 rounded-0 rounded-start" type="search"
-                    placeholder="Search for Products" aria-label="Search">
-                <button class="btn btn-success px-4 rounded-0 rounded-end" type="button">search</button>
+            <form class="d-flex flex-grow-1 mx-3 border-2" style="max-width: 600px;">
+                <input class="form-control " type="search" placeholder="Search for Products">
+                <button class="px-4 border-0 text-white" type="button"
+                    style="background-color: #48ad92;">search</button>
             </form>
             <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
-                <a href="#" class="text-dark text-decoration-none small">Sell on MVS</a>
-                <a href="#" class="text-dark text-decoration-none small">How to Order</a>
-                <a href="#" class="text-dark text-decoration-none small">Login/Register</a>
+                <span><a href="#">Sell on MVS</a></span>
+                <span><a href="#">How to Order</a></span>
+                <span><a href="#">Login/Register</a></span>
                 <a href="#" class="position-relative text-dark">
                     <i class="fa-solid fa-cart-shopping fs-5"></i>
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
@@ -183,15 +230,22 @@
     <div id="Banner" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./images/bannar.jpg" class="d-block  img-fluid" style="height: 80vh">
+                <img src="./images/bannar.jpg" class="d-block img-fluid" style="height: 80vh;" width="100%">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
             </div>
             <div class="carousel-item">
-                <img src="./images/banner2.jpg" class="d-block  img-fluid" style="height: 80vh">
+                <img src="./images/banner2.jpg" class="d-block img-fluid" style="height: 80vh;" width="100%">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
             </div>
             <div class="carousel-item">
-                <img src="./images/banner3.jpg" class="d-block  img-fluid" style="height: 80vh">
+                <img src="./images/banner3.jpg" class="d-block img-fluid" style="height: 80vh;" width="100%">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
             </div>
         </div>
+
         <button class="carousel-control-prev" type="button" data-bs-target="#Banner" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
         </button>
@@ -204,43 +258,179 @@
     <!-- -------------------Qucik Shop Section -------------------->
 
     <div class="container quick-section my-4 p-4">
-        <div class="row">
-            <div class="col-sm-12 col-md-2 ">
-                <div class="" style="width: 100%;">
-                    <img src="./images/quick1.webp" class="img-fluid rounded-circle" alt="Quick image"><a
-                        href="#">Supplements</a></div>
-            </div>
-            <div class="col-sm-12 col-md-2 ">
-                <div class="" style="width: 100%;">
-                    <img src="./images/quick2.webp" class="img-fluid rounded-circle" alt="Quick image">
-                    <a href="#">Sports Nutrition</a>
+        <div class="text-center">
+            <h2 class="mb-2">Quick Shop</h2>
+            <img src="./images/line.webp" style="height: 20px; width: 25%;" alt="">
+        </div>
+
+        <div id="Quick" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center flex-column flex-md-row">
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/Supplement.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Supplement</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/Sports Neutriton.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Sports Neutriton</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/homeopathy.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">homeopathy</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/health & Wellness.avif"
+                                        class="img-fluid rounded-circle" alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">health & Wellness</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/food & Snacks.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Food & Snacks</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/personal Care.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">personal Care</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-2 ">
-                <div class="" style="width: 100%;">
-                    <img src="./images/quick3.webp" class="img-fluid rounded-circle" alt="Quick image">
-                    <a href="#">Health & Wellness</a>
+                <!-- slisde 2 -->
+                <div class="carousel-item ">
+                    <div class="d-flex justify-content-center flex-column flex-md-row">
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/Supplement.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Supplement</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/Sports Neutriton.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Sports Neutriton</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/homeopathy.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">homeopathy</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/health & Wellness.avif"
+                                        class="img-fluid rounded-circle" alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">health & Wellness</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/food & Snacks.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Food & Snacks</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/personal Care.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">personal Care</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-2">
-                <div class="" style="width: 100%;">
-                    <img src="./images/quick4.webp" class="img-fluid rounded-circle" alt="Quick image">
-                    <a href="#">Personal Care</a>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-2 ">
-                <div class="" style="width: 100%;">
-                    <img src="./images/quick5.webp" class="img-fluid rounded-circle" alt="Quick image">
-                    <a href="#">Food & Snacks</a>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-2 ">
-                <div class="" style="width: 100%;">
-                    <img src="./images/quick1.webp" class="img-fluid rounded-circle" alt="Quick image">
-                    <a href="#">Homeopathy/Herbal</a>
+                <!-- slide 3 -->
+                <div class="carousel-item ">
+                    <div class="d-flex justify-content-center flex-column flex-md-row">
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/Supplement.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Supplement</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/Sports Neutriton.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Sports Neutriton</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/homeopathy.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">homeopathy</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/health & Wellness.avif"
+                                        class="img-fluid rounded-circle" alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">health & Wellness</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/food & Snacks.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">Food & Snacks</a></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 text-center">
+                            <div class="text-center" style="width: 100%;">
+                                <div class=""><img src="./images/personal Care.avif" class="img-fluid rounded-circle"
+                                        alt="Quick image">
+                                </div>
+                                <div class=""><a href="#">personal Care</a></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="quick-btns">
+        <button type="button" data-bs-target="#Quick" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#Quick" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#Quick" data-bs-slide-to="2"></button>
     </div>
 
     <!--------------------------- templates section ------------->
@@ -265,11 +455,23 @@
         </div>
     </div>
 
+    <!---------------------------- floating button --------------------------->
+
+    <button id="floating-btn" type="button" class="btn position-absolute text-bg-light rounded-pill"
+        style="display:none;">Add to Cart</button>
 
     <!---------------------------- special offers section ------------------------>
 
     <section class="top-seller p-3">
-        <h2 class="text-center">Special Offers</h2>
+        <div class="row align-items-center mb-3">
+            <div class="col-12 col-lg-10 mx-auto text-center">
+                <h2 class="mb-2">Special Offers</h2>
+                <img src="./images/line.webp" style="height: 20px; width: 25%; background: transparent;" alt="">
+            </div>
+            <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
+                <a href="#" class="text-decoration-underline">View All</a>
+            </div>
+        </div>
         <div id="seller" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner justify-content-center align-items-center">
                 <div class="carousel-item active">
@@ -449,7 +651,15 @@
     <!------------------------ New Items ------------->
 
     <section class="top-seller p-3">
-        <h2 class="text-center">New Items</h2>
+        <div class="row align-items-center mb-3">
+            <div class="col-12 col-lg-10 mx-auto text-center">
+                <h2 class="mb-2">New Items</h2>
+                <img src="./images/line.webp " style="height: 15px; width: 20%;" alt="">
+            </div>
+            <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
+                <a href="#" class="text-decoration-underline">View All</a>
+            </div>
+        </div>
         <div id="Items" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner justify-content-center align-items-center">
                 <div class="carousel-item active">
@@ -626,13 +836,18 @@
         </div>
     </section>
 
-
-
-
     <!--------------------- popular brand  -------------------->
 
+    <div class="row align-items-center mb-3">
+        <div class="col-12 col-lg-10 mx-auto text-center">
+            <h2 class="mb-2">Popular Brand</h2>
+            <img src="./images/line.webp " style="height: 15px; width: 20%;" alt="">
+        </div>
+        <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
+            <a href="#" class="text-decoration-underline">View All</a>
+        </div>
+    </div>
     <div class="container">
-        <h2 class="text-center">Popular Brand</h2>
         <div class="row">
             <div class="col-sm-12 col-md-3 p-2">
                 <img src="./images/brand1.avif" class="img-fluid w-100" alt="Brand 1">
@@ -651,9 +866,17 @@
 
     <!-- --------------------top Sellers ---------------->
 
-    <section class="top-seller p-3">
-        <h2 class="text-center">Top Sellers</h2>
-        <div id="seller" class="carousel slide" data-bs-ride="carousel">
+    <section class="top-seller p-3 my-5">
+        <div class="row align-items-center mb-3">
+            <div class="col-12 col-lg-10 mx-auto text-center">
+                <h2 class="mb-2">Top Sellers</h2>
+                <img src="./images/line.webp " style="height: 15px; width: 20%;" alt="">
+            </div>
+            <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
+                <a href="#" class="text-decoration-underline">View All</a>
+            </div>
+        </div>
+        <div id="top-seller" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner justify-content-center align-items-center">
                 <div class="carousel-item active">
                     <div class="container">
@@ -826,11 +1049,11 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev text-bg-dark" type="button" data-bs-target="#seller"
+            <button class="carousel-control-prev text-bg-dark" type="button" data-bs-target="#top-seller"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
-            <button class="carousel-control-next text-bg-dark" type="button" data-bs-target="#seller"
+            <button class="carousel-control-next text-bg-dark" type="button" data-bs-target="#top-seller"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </button>
@@ -839,26 +1062,27 @@
 
     <!-- ------------------ payment options --------------------------->
 
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-sm-12 col-md-4 d-flex p-2">
-                <div class="p-2 mx-1"><i class="fa fa-credit-card" style="font-size: 50px;"></i></div>
-                <div class="px-auto mx-auto">
-                    <h2>Payment Option</h2>
+    <div class="container py-5 payment-option">
+        <hr>
+        <div class="row p-3 mt-3 ">
+            <div class="col-sm-12 col-md-4 pay">
+                <img src="./images/payment1.avif" alt="" class="img-fluid" style="width: 50px; height: 50px;">
+                <div class="">
+                    <h3>Payment Option</h3>
                     <p>COD, Bank Transfer and Credit Card</p>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4 d-flex p-2">
-                <div class="p-2 mx-1"><i class="fa fa-truck" style="font-size: 50px;"></i></div>
-                <div class="px-auto mx-auto">
-                    <h2>Free Deliverey</h2>
+            <div class="col-sm-12 col-md-4 pay">
+                <img src="./images/payment2.avif" alt="" class="img-fluid" style="width: 50px; height: 50px;">
+                <div class="">
+                    <h3>Free Deliverey</h3>
                     <p>On order above PKR 2500</p>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-4 d-flex p-2">
-                <div class="p-2 mx-1"><i class="fa fa-exchange" style="font-size: 50px;"></i></div>
-                <div class="px-auto mx-auto">
-                    <h2>Free Return & Exchange</h2>
+            <div class="col-sm-12 col-md-4 pay">
+                <img src="./images/payment3.avif" alt="" class="img-fluid" style="width: 50px; height: 50px;">
+                <div class="">
+                    <h3>Free Return & Exchange</h3>
                     <p>Within 7 days</p>
                 </div>
             </div>
@@ -866,43 +1090,67 @@
     </div>
 
     <!-------------------------- Footer ------------------>
-
-    <div class="container-fluid text-bg-dark p-4 Footer ">
-        <div class="row">
-            <div class="col-md-4">
-                <h2>Help & Support</h2>
-                <li><a href="#">Sell on MVS</a></li>
-                <li><a href="#">How to Order</a></li>
-                <li><a href="#">Exchange & Return Policy</a></li>
-                <li><a href="#">Free Shipping</a></li>
-                <li><a href="#">Payment Options</a></li>
-                <li><a href="#">Login/Register</a></li>
-            </div>
-            <div class="col-md-4">
-                <h2>My Vitamin Store</h2>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Locations</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </div>
-            <div class="col-md-4">
-                <h2>Get in Touch</h2>
-                <div class="">
-                    <img src="./images/footer-logo.webp" class="img-fluid w-50" alt="">
-                    <p>My Vitamin Store is a retailer dedicated to inspiring customers through unique products.</p>
-                    <ul class="justify-content-center">
-                        <a href="#" class="mx-2"><i class="fa-brands fa-facebook" style="font-size: 30px;"></i></a>
-                        <a href="#" class="mx-2"><i class="fa-brands fa-instagram" style="font-size: 30px;"></i></a>
-                        <a href="#" class="mx-2"><i class="fa-brands fa-linkedin" style="font-size: 30px;"></i></a>
-                    </ul>
+    <footer style="background-color: black;" class="mt-3">
+        <div class="container Footer">
+            <div class="row" style="padding: 0 15px 50px;">
+                <div class="col-md-4 ">
+                    <p style="font-size: 16px;">Help & Support</p>
+                    <li><a href="#">Sell on MVS</a></li>
+                    <li><a href="#">How to Order</a></li>
+                    <li><a href="#">Exchange & Return Policy</a></li>
+                    <li><a href="#">Free Shipping</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                    <li><a href="#">Login/Register</a></li>
+                </div>
+                <div class="col-md-4">
+                    <p style="font-size: 16px;">My Vitamin Store</p>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </div>
+                <div class="col-md-4 text-center">
+                    <p style="font-size: 16px;">Get in Touch</p>
+                    <div class="py-3">
+                        <img src="./images/footer-logo.webp" class="img-fluid my-3" alt=""
+                            style="height: 100px; width: 100px;">
+                        <p class="my-3">My Vitamin Store is a retailer dedicated to inspiring customers through unique
+                            products.</p>
+                        <li class="">
+                            <a href="#" class="mx-2"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="#" class="mx-2"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="mx-2"><i class="fa-brands fa-linkedin"></i></a>
+                        </li>
+                    </div>
                 </div>
             </div>
         </div>
         <hr>
-        <div class="p-2">
-            <p class="text-center">Copyright © 2025, My Vitamin Store. All rights reserved.</p>
+        <div class="">
+            <p class="text-center">Copyright © 2025, <a href="#" style="color:#48ad92">My Vitamin Store</a>. All
+                rights reserved.</p>
         </div>
-    </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('floating-btn');
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.addEventListener('mouseover', () => {
+                const rect = card.getBoundingClientRect();
+                // Position the button at the center of the card (relative to the viewport + scroll)
+                btn.style.top = window.scrollY + rect.top + rect.height / 2 + 'px';
+                btn.style.left = window.scrollX + rect.left + rect.width / 2 + 'px';
+                btn.style.display = 'block';
+            });
+
+            card.addEventListener('mouseout', () => {
+                btn.style.display = 'none';
+            });
+        });
+
+    </script>
 </body>
 
 </html>
