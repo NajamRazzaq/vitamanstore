@@ -25,13 +25,15 @@
 
 
         .navbar-1 a {
-            color: black;
+            color: #666666;
             text-decoration: none;
+            opacity: 0.5;
         }
 
         .navbar-1 p {
-            color: black;
+            color: #666666;
             margin: 0;
+            opacity: 0.5;
         }
 
         .navbar-2 li {
@@ -45,8 +47,9 @@
 
         h2 {
             color: #48ad92;
-            font-weight: bold;
+            /* font-weight: bold; */
             font-size: 40px;
+            font-family: cormorant garamond, serif;
         }
 
         #banner img {
@@ -87,7 +90,10 @@
 
         .quick-btns button.active {
             background-color: #1a7456;
-            /* Dark green for active */
+        }
+
+        .card-body a {
+            text-align: center;
         }
 
         #floating-btn {
@@ -95,6 +101,10 @@
             transform: translate(-50%, -50%);
             display: none;
             z-index: 1000;
+        }
+
+        .View {
+             color: #48ad92;;
         }
 
         .top-seller .card {
@@ -258,9 +268,9 @@
     <!-- -------------------Qucik Shop Section -------------------->
 
     <div class="container quick-section my-4 p-4">
-        <div class="text-center">
+        <div class="text-center mx-auto">
             <h2 class="mb-2">Quick Shop</h2>
-            <img src="./images/line.webp" style="height: 20px; width: 25%;" alt="">
+            <img src="./images/line.webp" style="height: 20px; width: 14%;" alt="">
         </div>
 
         <div id="Quick" class="carousel slide" data-bs-ride="carousel">
@@ -438,17 +448,19 @@
     <div class="container my-4 p-3">
         <div class="row">
             <div class="col-sm-12 col-md-6">
-                <img src="./images/quick1.webp" class="img-fluid w-100 mb-3" alt="Main Image">
+                <img src="./images/quick1.webp" class="img-fluid w-100 mb-3" alt="Main Image" style="height: 500px;">
             </div>
             <div class="col-sm-12 col-md-6">
                 <div class="row">
                     <div class="col-6">
-                        <img src="./images/quick2.webp" class="img-fluid w-100 mb-3" alt="Image 2">
-                        <img src="./images/quick4.webp" class="img-fluid w-100 mb-3" alt="Image 4">
+                        <img src="./images/quick2.webp" class="img-fluid w-100 mb-4" alt="Image 2"
+                            style="height: 240px;">
+                        <img src="./images/quick4.webp" class="img-fluid w-100 " alt="Image 4" style="height: 240px;">
                     </div>
                     <div class="col-6">
-                        <img src="./images/quick3.webp" class="img-fluid w-100 mb-3" alt="Image 3">
-                        <img src="./images/quick5.webp" class="img-fluid w-100 mb-3" alt="Image 5">
+                        <img src="./images/quick3.webp" class="img-fluid w-100 mb-4" alt="Image 3"
+                            style="height: 240px;">
+                        <img src="./images/quick5.webp" class="img-fluid w-100 " alt="Image 5" style="height: 240px;">
                     </div>
                 </div>
             </div>
@@ -466,7 +478,7 @@
         <div class="row align-items-center mb-3">
             <div class="col-12 col-lg-10 mx-auto text-center">
                 <h2 class="mb-2">Special Offers</h2>
-                <img src="./images/line.webp" style="height: 20px; width: 25%; background: transparent;" alt="">
+                <img src="./images/line.webp" style="height: 20px; width: 14%;" alt="">
             </div>
             <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
                 <a href="#" class="text-decoration-underline">View All</a>
@@ -481,9 +493,10 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/1.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                        <a href="#" class="text-center">
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct</h6>
+                                            <p class="View">★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -492,9 +505,9 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/2.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                        <a href="#" class="text-center">
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -503,11 +516,11 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/3.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
+                                        <a href="#" class="text-center">
                                             <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                                5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -516,11 +529,11 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/3.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
+                                        <a href="#" class="text-center">
                                             <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                                5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -535,9 +548,9 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/5.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6>Kevin Levrone Signature Series Anabolic Mass (Chocolate), 3 Kg
-                                                PKR 21,500 PKR 17,000</h6>
+                                        <a href="#" class="text-center">
+                                            <h6>Kevin Levrone Signature Series Anabolic Mass (Chocolate), 3 Kg</h6>
+                                            <p class="text-danger">PKR 21,500 PKR 17,000</p>
                                         </a>
                                     </div>
                                 </div>
@@ -546,9 +559,9 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/6.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6>Fablous Hairgain Hair Spray, 100ml
-                                                PKR 2,750</h6>
+                                        <a href="#" class="text-center">
+                                            <h6>Fablous Hairgain Hair Spray, 100ml</h6>
+                                            <p class="text-danger">PKR 2,750</p>
                                         </a>
                                     </div>
                                 </div>
@@ -557,9 +570,9 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/7.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                        <a href="#" class="text-center">
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -568,9 +581,10 @@
                                 <div class="card border-0">
                                     <img class="card-img-top img-fluid " src="./images/1.jpg" alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                        <a href="#" class="text-center">
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct</h6>
+                                            <p class="View"> ★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -586,11 +600,11 @@
                                     <img class="card-img-top img-fluid " src="./images/topseller7.webp"
                                         alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
+                                        <a href="#" class="text-center">
                                             <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                                5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -600,9 +614,10 @@
                                     <img class="card-img-top img-fluid " src="./images/topseller2.webp"
                                         alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                        <a href="#" class="text-center">
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct</h6>
+                                            <p class="View"> ★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -612,9 +627,9 @@
                                     <img class="card-img-top img-fluid " src="./images/topseller5.webp"
                                         alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                        <a href="#" class="text-center">
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -624,11 +639,11 @@
                                     <img class="card-img-top img-fluid " src="./images/topseller1.webp"
                                         alt="Card image">
                                     <div class="card-body">
-                                        <a href="#">
+                                        <a href="#" class="text-center">
                                             <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                                5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -654,7 +669,7 @@
         <div class="row align-items-center mb-3">
             <div class="col-12 col-lg-10 mx-auto text-center">
                 <h2 class="mb-2">New Items</h2>
-                <img src="./images/line.webp " style="height: 15px; width: 20%;" alt="">
+                <img src="./images/line.webp " style="height: 15px; width: 14%;" alt="">
             </div>
             <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
                 <a href="#" class="text-decoration-underline">View All</a>
@@ -670,8 +685,9 @@
                                     <img class="card-img-top img-fluid " src="./images/item1.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct</h6>
+                                            <p class="View"> ★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -681,8 +697,8 @@
                                     <img class="card-img-top img-fluid " src="./images/item2.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -692,10 +708,9 @@
                                     <img class="card-img-top img-fluid " src="./images/item3.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -705,10 +720,9 @@
                                     <img class="card-img-top img-fluid " src="./images/item4.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -724,8 +738,8 @@
                                     <img class="card-img-top img-fluid " src="./images/item5.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Kevin Levrone Signature Series Anabolic Mass (Chocolate), 3 Kg
-                                                PKR 21,500 PKR 17,000</h6>
+                                            <h6>Kevin Levrone Signature Series Anabolic Mass (Chocolate), 3 Kg</h6>
+                                            <p class="text-danger">PKR 21,500 PKR 17,000</p>
                                         </a>
                                     </div>
                                 </div>
@@ -735,8 +749,8 @@
                                     <img class="card-img-top img-fluid " src="./images/item6.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Fablous Hairgain Hair Spray, 100ml
-                                                PKR 2,750</h6>
+                                            <h6>Fablous Hairgain Hair Spray, 100ml</h6>
+                                            <p class="text-danger">PKR 2,750</p>
                                         </a>
                                     </div>
                                 </div>
@@ -746,8 +760,8 @@
                                     <img class="card-img-top img-fluid " src="./images/item1.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -757,8 +771,9 @@
                                     <img class="card-img-top img-fluid " src="./images/item2.webp" alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct</h6>
+                                            <p class="View"> ★★★★★10 reviews</p>
+                                            <p class="text-danger">FPKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -775,10 +790,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -789,8 +803,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct </h6>
+                                            <p class="View">★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -801,8 +816,8 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -813,10 +828,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -841,7 +855,7 @@
     <div class="row align-items-center mb-3">
         <div class="col-12 col-lg-10 mx-auto text-center">
             <h2 class="mb-2">Popular Brand</h2>
-            <img src="./images/line.webp " style="height: 15px; width: 20%;" alt="">
+            <img src="./images/line.webp " style="height: 15px; width: 14%;" alt="">
         </div>
         <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
             <a href="#" class="text-decoration-underline">View All</a>
@@ -849,17 +863,23 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-sm-12 col-md-3 p-2">
+            <div class="col-sm-12 col-md-2 p-2">
                 <img src="./images/brand1.avif" class="img-fluid w-100" alt="Brand 1">
             </div>
-            <div class="col-sm-12 col-md-3 p-2">
+            <div class="col-sm-12 col-md-2 p-2">
                 <img src="./images/brand2.avif" class="img-fluid w-100" alt="Brand 2">
             </div>
-            <div class="col-sm-12 col-md-3 p-2">
+            <div class="col-sm-12 col-md-2 p-2">
                 <img src="./images/brand3.avif" class="img-fluid w-100" alt="Brand 3">
             </div>
-            <div class="col-sm-12 col-md-3 p-2">
+            <div class="col-sm-12 col-md-2 p-2">
                 <img src="./images/brand4.webp" class="img-fluid w-100" alt="Brand 4">
+            </div>
+            <div class="col-sm-12 col-md-2 p-2">
+                <img src="./images/brand5.avif" class="img-fluid w-100" alt="Brand 4">
+            </div>
+            <div class="col-sm-12 col-md-2 p-2">
+                <img src="./images/brand6.avif" class="img-fluid w-100" alt="Brand 4">
             </div>
         </div>
     </div>
@@ -870,7 +890,7 @@
         <div class="row align-items-center mb-3">
             <div class="col-12 col-lg-10 mx-auto text-center">
                 <h2 class="mb-2">Top Sellers</h2>
-                <img src="./images/line.webp " style="height: 15px; width: 20%;" alt="">
+                <img src="./images/line.webp " style="height: 15px; width: 14%;" alt="">
             </div>
             <div class="col-12 col-lg-2  text-center mt-2 mt-lg-0">
                 <a href="#" class="text-decoration-underline">View All</a>
@@ -887,8 +907,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct</h6>
+                                            <p class="View"> ★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -899,8 +920,8 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -911,10 +932,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -925,10 +945,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -945,8 +964,8 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Kevin Levrone Signature Series Anabolic Mass (Chocolate), 3 Kg
-                                                PKR 21,500 PKR 17,000</h6>
+                                            <h6>Kevin Levrone Signature Series Anabolic Mass (Chocolate), 3 Kg</h6>
+                                            <p class="text-danger">PKR 21,500 PKR 17,000</p>
                                         </a>
                                     </div>
                                 </div>
@@ -957,8 +976,8 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Fablous Hairgain Hair Spray, 100ml
-                                                PKR 2,750</h6>
+                                            <h6>Fablous Hairgain Hair Spray, 100ml</h6>
+                                            <p class="text-danger">PKR 2,750</p>
                                         </a>
                                     </div>
                                 </div>
@@ -969,8 +988,8 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                            <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -981,8 +1000,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct </h6>
+                                            <p class="View">★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -999,10 +1019,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                            <p class="View">★★★★★ 1 review</p>
+                                            <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -1013,8 +1032,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6> Get Alyve Maxamus For Men, 30 Ct ★★★★★10 reviews
-                                                PKR 2,200</h6>
+                                            <h6> Get Alyve Maxamus For Men, 30 Ct</h6>
+                                            <p class="View">★★★★★10 reviews</p>
+                                            <p class="text-danger">PKR 2,200</p>
                                         </a>
                                     </div>
                                 </div>
@@ -1025,8 +1045,8 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct
-                                                PKR 370</h6>
+                                            <h6>Trident Original Sugar Free Chewing Gum, 14 Ct</h6>
+                                                <p class="text-danger">PKR 370</p>
                                         </a>
                                     </div>
                                 </div>
@@ -1037,10 +1057,9 @@
                                         alt="Card image">
                                     <div class="card-body">
                                         <a href="#">
-                                            <h6>Core Champs Creatine
-                                                5000mg, 300g
-                                                ★★★★★ 1 review
-                                                PKR 5,990</h6>
+                                            <h6>Core Champs Creatine 5000mg, 300g</h6>
+                                                <p class="View">★★★★★ 1 review</p>
+                                                <p class="text-danger">PKR 5,990</p>
                                         </a>
                                     </div>
                                 </div>
@@ -1094,7 +1113,7 @@
         <div class="container Footer">
             <div class="row" style="padding: 0 15px 50px;">
                 <div class="col-md-4 ">
-                    <p style="font-size: 16px;">Help & Support</p>
+                    <p style="font-size: 18px;">Help & Support</p>
                     <li><a href="#">Sell on MVS</a></li>
                     <li><a href="#">How to Order</a></li>
                     <li><a href="#">Exchange & Return Policy</a></li>
@@ -1103,14 +1122,14 @@
                     <li><a href="#">Login/Register</a></li>
                 </div>
                 <div class="col-md-4">
-                    <p style="font-size: 16px;">My Vitamin Store</p>
+                    <p style="font-size: 18px;">My Vitamin Store</p>
                     <li><a href="#">Contact Us</a></li>
                     <li><a href="#">Locations</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                 </div>
                 <div class="col-md-4 text-center">
-                    <p style="font-size: 16px;">Get in Touch</p>
+                    <p style="font-size: 18px;">Get in Touch</p>
                     <div class="py-3">
                         <img src="./images/footer-logo.webp" class="img-fluid my-3" alt=""
                             style="height: 100px; width: 100px;">
